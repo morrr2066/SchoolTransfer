@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Application Confirmation</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .confirmation-container {
+            max-width: 700px;
+            margin: 50px auto;
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            direction: rtl; /* support Arabic direction */
+        }
+
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            direction: ltr;
+        }
+
+        .field {
+            margin-bottom: 20px;
+        }
+
+        .field label {
+            font-weight: bold;
+            display: block;
+            color: #333;
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+
+        .field p {
+            margin: 0;
+            padding: 8px;
+            background: #ecf0f1;
+            border-radius: 6px;
+        }
+
+        .print-button {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            margin-top: 30px;
+            background-color: #2980b9;
+            color: white;
+            text-align: center;
+            font-size: 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .print-button:hover {
+            background-color: #1f6391;
+        }
+    </style>
+</head>
+<body>
+    <div class="confirmation-container">
+        <h2>Application Confirmation / تأكيد التقديم</h2>
+
+        <div class="field">
+            <label>Student Full Name / اسم الطالب رباعي</label>
+            <p>{{ application.full_name }}</p>
+        </div>
+
+        <div class="field">
+            <label>National ID / الرقم القومي</label>
+            <p>{{ application.national_id }}</p>
+        </div>
+
+        <div class="field">
+            <label>Current Grade / الصف الحالي</label>
+            <p>{{ application.student_grade }}</p>
+        </div>
+
+        <div class="field">
+            <label>Parent Phone Number / رقم هاتف ولي الأمر</label>
+            <p>{{ application.phone_number }}</p>
+        </div>
+
+        <div class="field">
+            <label>Current School / المدرسة الحالية</label>
+            <p>{{ application.from_school }}</p>
+        </div>
+
+        <div class="field">
+            <label>Requested School / المدرسة المطلوبة</label>
+            <p>{{ application.to_school }}</p>
+        </div>
+
+        <div class="field">
+            <label>Birthdate / تاريخ الميلاد</label>
+            <p>{{ application.birthdate }}</p>
+        </div>
+
+        <div class="field">
+            <label>Governorate / المحافظة</label>
+            <p>{{ application.governorate }}</p>
+        </div>
+
+        <button class="print-button" onclick="window.print()">طباعة / Print</button>
+    </div>
+</body>
+</html>
+<script>
+    window.onload = function() {
+        alert("تم تقديم الطلب بنجاح ✓\nApplication submitted successfully.");
+    }
+</script>

@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>School Transfer Application</title>
+    <link rel="stylesheet" href="{% static 'transfer/style.css' %}">
+</head>
+<body>
+
+
+    <div class="em-logo">
+        <img
+                src="{% static 'moel.png' %}"
+                alt="Logo"
+        />
+    </div>
+
+    <div class="sz-logo">
+        <img
+                src="{% static 'suez.png' %}"
+                alt="Logo3"
+        />
+    </div>
+
+    <div class="title-h1">
+        <h1>
+          Apply to Change Your School
+        </h1>
+    </div><br><br>
+
+
+    {% if messages %}
+      <div class="message-h1" style="display:none;">
+        <ul>
+          {% for message in messages %}
+            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+
+
+    <form method="post">
+      {% csrf_token %}
+
+      <label>{{ form.full_name.label }}  <span style="float: right;">اسم الطالب رباعي</span></label>
+      {{ form.full_name }}<br><br>
+
+      <label>{{ form.national_id.label }}  <span style="float: right;">الرقم القومي</span></label>
+      {{ form.national_id }}<br><br>
+
+      <label>{{ form.student_grade.label }}  <span style="float: right;">الصف الدراسي</span></label>
+      {{ form.student_grade }}<br><br>
+
+      <label>{{ form.phone_number.label }}  <span style="float: right;">رقم الهاتف</span></label>
+      {{ form.phone_number }}<br><br>
+
+      <label>{{ form.from_school.label }}  <span style="float: right;">المدرسة الحالية</span></label>
+      {{ form.from_school }}<br><br>
+
+      <label>{{ form.to_school.label }}  <span style="float: right;">المدرسة المحول إليها</span></label>
+      {{ form.to_school }}<br><br>
+
+      <button type="submit">إرسال الطلب</button>
+    </form>
+
+
+</body>
+</html>
+
+<script>
+  window.onload = function() {
+    const messageDiv = document.querySelector('.message-h1');
+    if (!messageDiv) return;
+
+    // Create popup div
+    const popup = document.createElement('div');
+    popup.className = 'popup-message';
+
+    // Get the first message text (assuming one message)
+    const firstMessage = messageDiv.querySelector('li');
+    if (firstMessage) {
+      popup.textContent = firstMessage.textContent;
+      document.body.appendChild(popup);
+
+      // Show popup
+      setTimeout(() => popup.classList.add('show'), 100);
+
+      // Hide after 4 seconds
+      setTimeout(() => {
+        popup.classList.remove('show');
+        // Remove after fade-out
+        setTimeout(() => popup.remove(), 500);
+      }, 4000);
+    }
+  }
+</script>
