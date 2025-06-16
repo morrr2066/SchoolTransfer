@@ -4,6 +4,16 @@ body {
     padding: 20px;
 }
 
+.title-h1{
+    display:flex;
+    margin-left:700px;
+}
+
+.messages-h1 {
+    display:flex;
+    margin-left:700px;
+}
+
 form {
     background: white;
     padding: 25px;
@@ -44,4 +54,37 @@ button:hover {
 .error {
     color: red;
     margin-bottom: 10px;
+}
+
+.popup-message {
+  position: fixed;
+  top: 20px;
+  left: 50%;          /* change from right: 20px */
+  transform: translateX(-50%);  /* center horizontally */
+  background-color: #4caf50; /* green for success */
+  color: white;
+  padding: 15px 25px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  font-size: 16px;
+  z-index: 10000;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Show the popup */
+.popup-message.show {
+  opacity: 1;
+}
+
+.sz-logo {
+    position:absolute;
+    margin-top:80px;
+    margin-left:1400px;
+}
+
+.em-logo {
+    position:absolute;
+    margin-top:100px;
+    margin-left:50px;
 }
