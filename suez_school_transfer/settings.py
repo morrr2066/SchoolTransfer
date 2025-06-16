@@ -76,10 +76,10 @@ WSGI_APPLICATION = 'suez_school_transfer.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'school_change_db',
-        'USER': 'admin',
-        'PASSWORD': '2691999Mm',
-        'HOST': 'localhost',
+        'NAME': 'go2trip_db',
+        'USER': 'go2trip_db_user',
+        'PASSWORD': 'imsyBotsOkaCrQicTwupT6854QwGLwSO',
+        'HOST': 'dpg-d17cjh2dbo4c73fpncdg-a.frankfurt-postgres.render.com',
         'PORT': '5432',
     }
 }
