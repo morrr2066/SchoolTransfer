@@ -1,0 +1,1 @@
+web: gunicorn suez_school_transfer.wsgi
