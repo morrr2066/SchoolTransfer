@@ -29,12 +29,19 @@ body {
     }
 }
 
-/* On smaller screens, reposition logos */
 @media (max-width: 1023px) {
     .sz-logo, .em-logo {
         position: relative;
         margin: 20px auto;
         display: block;
+    }
+
+    .sz-logo img, .em-logo img {
+        width: 50px;  /* reduce logo size on small screens */
+    }
+
+    .title-h1 h1 {
+        font-size: 20px;  /* smaller title text on phones */
     }
 }
 
