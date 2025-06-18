@@ -10,24 +10,14 @@
 
 
     <div class="em-logo">
-        <img
-                src="{% static 'moel.png' %}"
-                alt="Logo"
-        />
+
     </div>
 
     <div class="sz-logo">
-        <img
-                src="{% static 'suez.png' %}"
-                alt="Logo3"
-        />
+
     </div>
 
-    <div class="title-h1">
-        <h1>
-          Apply to Change Your School
-        </h1>
-    </div><br><br>
+    <br><br>
 
 
     {% if messages %}
@@ -43,8 +33,22 @@
 
     <form method="post">
       {% csrf_token %}
+        <!--<div class="suez">
+        <img
+                src="{% static 'suez.png' %}"
+                alt="Logo3"
+                class="suez-img"
+        />
+        </div>
+        <img
+                src="{% static 'moel.png' %}"
+                alt="Logo"
+        />-->
+        <h1>
+          Apply to Change Your School
+        </h1>
 
-      <label>{{ form.full_name.label }}  <span style="float: right;">اسم الطالب رباعي</span></label>
+        <label>{{ form.full_name.label }}  <span style="float: right;">اسم الطالب رباعي</span></label>
       {{ form.full_name }}<br><br>
 
       <label>{{ form.national_id.label }}  <span style="float: right;">الرقم القومي</span></label>
