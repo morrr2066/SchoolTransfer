@@ -4,24 +4,51 @@ body {
     padding: 20px;
 }
 
-.title-h1{
-    display:flex;
-    margin-left:700px;
+.title-h1, .messages-h1 {
+    display: flex;
+    justify-content: center; /* centers them horizontally */
+    text-align: center;
+    margin: 20px 0;
 }
 
-.messages-h1 {
-    display:flex;
-    margin-left:700px;
+.sz-logo, .em-logo {
+    position: absolute;
+    width: 80px; /* adjust to your need */
 }
+
+/* Adjust logo positions on large screens */
+@media (min-width: 1024px) {
+    .sz-logo {
+        top: 80px;
+        right: 50px;
+    }
+
+    .em-logo {
+        top: 100px;
+        left: 50px;
+    }
+}
+
+/* On smaller screens, reposition logos */
+@media (max-width: 1023px) {
+    .sz-logo, .em-logo {
+        position: relative;
+        margin: 20px auto;
+        display: block;
+    }
+}
+
 
 form {
     background: white;
     padding: 25px;
     border-radius: 10px;
     box-shadow: 0 0 10px #ccc;
-    max-width: 500px;
+    max-width: 90vw;
+    width: 100%;
     margin: auto;
 }
+
 
 input, select {
     width: 100%;
@@ -66,7 +93,7 @@ button:hover {
   padding: 15px 25px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
-  font-size: 16px;
+  font-size: clamp(14px, 2vw, 18px);
   z-index: 10000;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
@@ -77,14 +104,3 @@ button:hover {
   opacity: 1;
 }
 
-.sz-logo {
-    position:absolute;
-    margin-top:80px;
-    margin-left:1400px;
-}
-
-.em-logo {
-    position:absolute;
-    margin-top:100px;
-    margin-left:50px;
-}
